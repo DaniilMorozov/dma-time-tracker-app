@@ -37,6 +37,17 @@
         }
     };
 
+    const notifyFocus = () => {
+        if (!frame.classList.contains('hidden') && frame.contentWindow) {
+            frame.contentWindow.postMessage({ type: 'dma-app-focus' }, base.replace(/\/$/, ''));
+        }
+    };
+    window.addEventListener('focus', notifyFocus);
+    document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible') {
+            notifyFocus();
+        }
+    });
     document.getElementById('retry').addEventListener('click', check);
     window.addEventListener('focus', () => {
         if (!fallback.classList.contains('hidden')) {
