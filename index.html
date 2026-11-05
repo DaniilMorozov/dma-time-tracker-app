@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>DMA Time Tracker</title>
+        <meta name="description" content="Daily time report from YouTrack issues to the DialMyApp Panel" />
+        <meta name="color-scheme" content="light dark" />
+        <meta name="theme-color" content="#2563eb" />
+        <link rel="manifest" href="manifest.webmanifest" />
+        <link rel="icon" href="icons/icon192.png" />
+        <link rel="apple-touch-icon" href="icons/icon192.png" />
+        <link rel="stylesheet" href="app.css" />
+    </head>
+    <body>
+        <iframe id="tracker" title="DMA YouTrack Time Tracker" class="hidden" allow="identity-credentials-get"></iframe>
+        <main id="fallback" class="hidden">
+            <img src="icons/icon192.png" width="72" height="72" alt="" />
+            <h1>DMA Time Tracker</h1>
+            <p id="message">Checking the extension…</p>
+            <p class="hint">
+                This app is a window for the <b>DMA YouTrack Time Tracker</b> Chrome extension. Install the extension in
+                this browser profile, then reload this page.
+            </p>
+            <button id="retry" type="button">Check again</button>
+        </main>
+        <script src="app.js"></script>
+    </body>
+</html>
